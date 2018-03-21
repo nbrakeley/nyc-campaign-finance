@@ -1,0 +1,72 @@
+.header {
+    height: 100px;
+    background-color: #222;
+    color: #FFFFE0;
+    border:1px solid #888;
+    font-family: sans-serif;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.content {
+    font-family: sans-serif;
+    height: 500px;
+    background-color: #222;
+    color: #FFFFE0;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.links {
+    padding: 10px;
+    background-color: #149B94;
+    width: 200px;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.links a {
+    color: #FFFFE0;
+}
+
+a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    color: blue;
+}
+
+.layout-table {
+    //border: 1px solid red;
+    margin: 0 auto;
+}
+
+.layout-table > tbody > tr > td {
+    //border: 1px solid red;
+    vertical-align: top;
+}
+
+.data-table thead > tr {
+     height:50px;
+}
+
+.data-cell {
+    padding: 0px;
+}
+
+.input-cell {
+    padding: 10px;
+    height: 100%;
+    background-color: #aaaaaa;
+    border-radius: 3px;
+}
+
+.data-table {
+    width: 100%;
+    text-align: left;
+}
+
+.data-table thead{
+    background-color: #888888;
+    display: table-header-group;
+}
+

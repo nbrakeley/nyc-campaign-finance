@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="nodeFinance">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Campaign Finance</title>
+        <!--<base href="https://www.mywebsite.com">--><base href=".">
+        <link rel="stylesheet" href="/stylesheets/style.css" media="screen">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+    <body ng-controller="mainController">
+        <div class="header">
+            <h1>Campaign Finance Data</h1>
+        </div>
+        <hr>
+        <div class="content" style="overflow:auto">
+            <table class="layout-table">
+                <tr style="height:50px">
+                    <td rowspan="2" class="links">
+                        Data Library
+                        <ul>
+                            <li><a href="./data/2017_Contributions.csv">2017 Contributions</a></li>
+                            <li><a href="./data/2017_Expenditures.csv">2017 Expenditures</a></li>
+                            <li><a href="./data/2017_Intermediaries.csv">2017 Intermediaries</a></li>
+                            <li><a href="./data/2017_payment.csv">2017 Payments</a></li>
+                        </ul>
+                    </td>
+                    <td class="input-cell">Enter name: <input id="recipName" class="form-input form-input-recipname" placeholder="you@example.com" size="30"></td>
+                    <td class="input-cell">Enter year: <input id="year" class="form-input form-input-year"></td>
+                    <td class="input-cell">Min. Amount: <input id="min-amnt" class="form-input form-input-min-amnt"></td>
+                    <td class="input-cell">Max. Amount: <input id="max-amnt" class="form-input form-input-max-amnt"></td>
+                </tr>
+                <tr style="height:400px">
+                    <td colspan="4" class="data-cell">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <td ng-repeat="col in columns" class="{{col.name}}" custom-sort order="col.sort" sort="sort">
+                                        {{col.display}}
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="row in tableData | orderBy:sort.sortingOrder:sort.reverse">
+                                    <td>{{row.cdate}}</td>
+                                    <td>{{row.election}}</td>
+                                    <td>{{row.recipname}}</td>
+                                    <td>{{row.amnt}}</td>
+                                    <td>{{row.name}}</td>
+                                    <td>{{row.empname}}</td>
+                                </tr>
+                            <tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script src="//code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+        <script src="javascripts/app.js"></script>
+    </body>
+</html>
